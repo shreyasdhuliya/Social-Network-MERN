@@ -1,0 +1,66 @@
+#########################################################################
+                            Reflections
+#########################################################################
+
+
+1. MongoDB Atlas
+   - setting up MongoDB Atlas in web
+   - creating clusters
+   - whitelisting IP address
+   - adding new database user - which can read and write in database
+   - "connect your application" - string used to plugin with express
+   - collections tab -> different 
+   - mongoose: helps to connect with database in node
+   @https://cloud.mongodb.com/
+
+
+2. Dependencies 
+   i) express-validator : we can validate fields in express before sending it to database
+   @https://express-validator.github.io/docs/
+
+   ii)bcryptjs : crypting passwords before storing in database,
+      - Match: compare crypted passsword with user provided password 
+   
+   iii) gravatar: avatar creater
+   
+   iv) jsonwebtoken :
+   @https://www.youtube.com/watch?v=soGRyl9ztjI&t=786s
+
+   v) request
+
+   vi) mongoose
+
+   vii) nodemon: after saving server refreshe automatically
+
+   viii) concurretly: for running react and express server concurrently
+
+    
+
+3. Github, Git
+   - push different branches in github (we can check in dropdown the different branches pushed)
+
+4. package.json 
+  
+  - "scripts"
+     - instead of writing example "npm run file.js" or "node file.js"
+        we can save in script address
+        "scriptname" : "nodemon file.js"
+        if we do "npm run scriptname"    
+        @https://www.freecodecamp.org/news/introduction-to-npm-scripts-1dbb2ae01633/
+
+5. mongoose+ mongodb
+  - check -> modals/User.js
+  - making schemas, collection, 
+
+
+6. Postman - used for api requests before the front end is created we can get. post requests for testing
+   - installing postman in windows
+   - creating request with headers, collections, sending raw 
+
+7. jsonwebtoken(JWT)
+    @https://www.youtube.com/watch?v=soGRyl9ztjI&t=786s
+
+
+8. Aysnc and await 
+
+  - const test = aysnc () => { await } 
