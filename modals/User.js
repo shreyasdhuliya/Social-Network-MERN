@@ -15,7 +15,6 @@ const UserSchema = new mongoose.Schema({
         type:String,
         required: true
     },
-    //attach url 
     avatar: {
         type: String
     }, 
