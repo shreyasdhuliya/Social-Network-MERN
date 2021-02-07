@@ -1,7 +1,11 @@
 #########################################################################
                             Reflections
 #########################################################################
-
+0. .env
+securing API_KEYs and other keys using .env file
+-> npm i --save dotenv
+-> require('dotenv').config(); //path-> config/default.js
+-> process.env.API_KEY
 
 1. MongoDB Atlas
    - setting up MongoDB Atlas in web
@@ -26,7 +30,7 @@
    iv) jsonwebtoken :
    @https://www.youtube.com/watch?v=soGRyl9ztjI&t=786s
 
-   v) request
+   v) request - for getting github projects to show in frontend
 
    vi) mongoose
 
@@ -70,3 +74,21 @@
 9. Error handling
    - error kind
    catch(err){ if(err.kind === "ObjectId")  }
+
+10. New coding techniques
+
+i) conditional JSX
+{!loading && (<> { isAuthenticated ? authLinks: guestLinks} </>) } 
+{user && user.name} if user exist show user.name
+
+ii) chaining case
+      case REGISTER_FAIL:
+        case AUTH_ERROR:
+        case LOGIN_FAIL:
+
+iii) Redirect in react-router-dom
+if(isAuthenticated){
+    return <Redirect to="/dashboard" />
+
+iv) destrucuring
+    const PrivateRoute = ({component: Component, auth: {isAuthenticated, loading},...rest })

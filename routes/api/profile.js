@@ -13,11 +13,14 @@ const config = require('config');
 //@accress      private
 router.get('/me', auth, async (req, res) => {
     try{
+
         const profile = await Profile.findOne({user: req.user.id}).populate('user', ['name', 'avatar'])
 
         if(!profile){
             return res.status(400).json({msg:"no profile for thiss user"})
         }
+
+        res.json(profile)
 
     }catch(err){
         console.error(err.message);
@@ -327,8 +330,7 @@ router.get('/github/:username', async (req,res) => {
         
         const options = {
             uri: `https://api.github.com/users/${req.params.username
-        }/repos?per_page=5&sort=created:asc&client_id=${config.get('githubClientId'
-        )}&client_secret=${config.get('githubSecret')}`,
+        }/repos?per_page=5&sort=created:asc&client_id=${config['githubClientId']}&client_secret=${config['githubSecret']}`,
         method:'GET',
         headers: {'user-agent': 'node.js'}
 

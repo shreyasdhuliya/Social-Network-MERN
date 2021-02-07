@@ -6,6 +6,8 @@ const User = require('../../modals/User');
 const {check, validationResult} = require('express-validator');
 const jwt = require('jsonwebtoken');
 const config = require('config');
+//import {config} from '../../config/default';
+
 const bcrypt = require('bcryptjs');
 
 //@route        GET api/auth
@@ -62,7 +64,7 @@ async (req, res) => {
 
     jwt.sign(
         payload, 
-        config.get('jwtToken'),
+        config["jwtToken"],//config.get('jwtToken'),
         {expiresIn: 360000},
         (err, token) => {
             if (err) throw err;
