@@ -2,9 +2,10 @@
                             Reflections
 #########################################################################
 0. .env
+https://www.youtube.com/watch?v=17UVejOw3zA
 securing API_KEYs and other keys using .env file
 -> npm i --save dotenv
--> require('dotenv').config(); //path-> config/default.js
+-> require('dotenv').config(); //path-> git add .config/default.js
 -> process.env.API_KEY
 
 1. MongoDB Atlas
@@ -32,7 +33,7 @@ securing API_KEYs and other keys using .env file
 
    v) request - for getting github projects to show in frontend
 
-   vi) mongoose
+   vi) mongoose -> need mongouri to connect mongodb
 
    vii) nodemon: after saving server refreshe automatically
 
@@ -74,8 +75,14 @@ securing API_KEYs and other keys using .env file
 9. Error handling
    - error kind
    catch(err){ if(err.kind === "ObjectId")  }
+   err.STATUS_CODE
+   err.STATUS_MSG
 
 10. New coding techniques
+
+0i) export default connect(null, {createProfile})(withRouter(CreateProfile))
+withRouter to use history in props //components/profile-forms/CreateProfile.js
+
 
 i) conditional JSX
 {!loading && (<> { isAuthenticated ? authLinks: guestLinks} </>) } 
@@ -92,3 +99,22 @@ if(isAuthenticated){
 
 iv) destrucuring
     const PrivateRoute = ({component: Component, auth: {isAuthenticated, loading},...rest })
+
+v) Export, import, module.export, require
+
+vi) return vs () : first bracket itself returns without return keyword
+ test = ()  => {return xyz} = test = () => (xyz)
+
+ vi) Redirect from 'react': we can use it in component <Redirect to='/dashboard'/> 
+     BUT WE CANNOT  use it <Redirect /> in ACTIONS, 
+     In AACTIONS: history.push(''/dashboard') 
+
+
+ 11. shortcutkeys - es7 extenshion shortcutkeys
+
+ racfp : create arrow function with proptypes
+ racf : craete arrow function
+ ptbr: proptype.boolean.reaquired
+ btb:proptype.boolean
+ btfr: proptype.function.reaquired
+ btf: proptype.function
